@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds">
+        <attr name="invertColor" format="color"/>
+        <attr name="softColor" format="color"/>
+        <attr name="hardColor" format="color"/>
+        <attr name="mediumColor" format="color"/>
+        <attr name="orange" format="color"/>
+        <attr name="red" format="color"/>
+        <attr name="blue" format="color"/>
+        <attr name="error" format="color"/>
+        <attr name="check" format="color"/>
+        <attr name="disable" format="color"/>
+        <attr name="backgroundApp" format="color"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,45 @@
+<resources>
+    <string-array name="lang">
+        <item>English</item>
+        <item>Indonesia</item>
+    </string-array>
+    <string name="app_name">Percobaan</string>
+    <string name="YourMoney">Your Money</string>
+    <string name="MoreInfo">Tap for more info >></string>
+    <string name="Today">Today</string>
+    <string name="Tomorow">Tomorow</string>
+    <string name="Dasboard">Dasboard</string>
+    <string name="Workbench">Workbench</string>
+    <string name="Finance">Finance</string>
+    <string name="Setting">Setting</string>
+    <string name="AddNewNote">Add New Note</string>
+    <string name="WhatDoing">What are you doing ?</string>
+    <string name="IsJob">This is job ?</string>
+    <string name="IsDate">Is there a date ?</string>
+    <string name="YourNote">Your Note :</string>
+    <string name="Example">example</string>
+    <string name="SaveNote">Save Note</string>
+    <string name="Done">Done</string>
+    <string name="ThisMonth">This Month</string>
+    <string name="Income">Income</string>
+    <string name="Spending">Spending</string>
+    <string name="WalletBalance">Wallet Balance</string>
+    <string name="SavingTargets">Saving Targets</string>
+    <string name="AddPayment">Add Payment</string>
+    <string name="AddTarget">Add Target</string>
+    <string name="Version">Version</string>
+    <string name="License">License</string>
+    <string name="Author">Author</string>
+    <string name="DarkMode">Dark Mode</string>
+    <string name="Language">Language</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Target">Target :</string>
+    <string name="Acheived">Acheived :</string>
+    <string name="Deficiency">Deficiency :</string>
+    <string name="NewTarget">Add New Target</string>
+    <string name="ForWhat">For What ?</string>
+    <string name="HowMany">How Many ?</string>
+    <string name="SaveTarget">Save Target</string>
+    <string name="SavePayment">Save Payment</string>
+    <string name="PaymentDetail">Payment Detail</string>
+</resources>

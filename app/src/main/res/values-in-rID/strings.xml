@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Percobaan</string>
+    <string name="YourMoney">Uang Anda</string>
+    <string name="MoreInfo">Ketuk untuk info lebih lanjut >></string>
+    <string name="Today">Hari ini</string>
+    <string name="Tomorow">Besok</string>
+    <string name="Dasboard">Dasbor</string>
+    <string name="Workbench">Meja Kerja</string>
+    <string name="Finance">Keuangan</string>
+    <string name="Setting">Pengaturan</string>
+    <string name="AddNewNote">Buat Catatan Baru</string>
+    <string name="WhatDoing">Apa yang kamu lakukan?</string>
+    <string name="IsJob">Apakah ini pekerjaan ?</string>
+    <string name="IsDate">Tanggal berapa ?</string>
+    <string name="YourNote">Catatan Anda :</string>
+    <string name="Example">contoh</string>
+    <string name="SaveNote">Simpan Catatan</string>
+    <string name="Done">Selesai</string>
+    <string name="ThisMonth">Bulan Ini</string>
+    <string name="Income">Pemasukan</string>
+    <string name="Spending">Pengeluaran</string>
+    <string name="WalletBalance">Saldo Anda</string>
+    <string name="SavingTargets">Target Menabung</string>
+    <string name="AddPayment">Tambah Pembayaran</string>
+    <string name="AddTarget">Tambah Target</string>
+    <string name="Version">Versi</string>
+    <string name="License">Lisensi</string>
+    <string name="Author">Pembuat</string>
+    <string name="DarkMode">Mode Gelap</string>
+    <string name="Language">Bahasa</string>
+    <string name="Cancel">Batal</string>
+    <string name="Target">Target :</string>
+    <string name="Acheived">Tercapai :</string>
+    <string name="Deficiency">Kekurangan :</string>
+    <string name="NewTarget">Buat Target Baru</string>
+    <string name="ForWhat">Untuk Apa ?</string>
+    <string name="HowMany">Berapa Jumlahnya ?</string>
+    <string name="SaveTarget">Simpan Target</string>
+    <string name="SavePayment">Simpan Pembayaran</string>
+    <string name="PaymentDetail">Detail Pembayaran</string>
+</resources>

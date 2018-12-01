@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- Light Mode theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#c7c7c7</item>
+        <item name="colorPrimaryDark">#7a7a7a</item>
+        <item name="colorAccent">#262626</item>
+        <item name="invertColor">#ffffff</item>
+        <item name="softColor">#c7c7c7</item>
+        <item name="hardColor">#262626</item>
+        <item name="mediumColor">#7a7a7a</item>
+        <item name="orange">#Fd8d87</item>
+        <item name="red">#ff8b8b</item>
+        <item name="blue">#6859ea</item>
+        <item name="error">#ff5353</item>
+        <item name="check">#4ae681</item>
+        <item name="disable">#6e909090</item>
+        <item name="backgroundApp">#e3e3e3</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <!-- Dark Mode theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#393939</item>
+        <item name="colorPrimaryDark">#ababab</item>
+        <item name="colorAccent">#e3e3e3</item>
+        <item name="invertColor">#1b1b1b</item>
+        <item name="softColor">#393939</item>
+        <item name="hardColor">#e3e3e3</item>
+        <item name="mediumColor">#ababab</item>
+        <item name="orange">#Fd8d87</item>
+        <item name="red">#ff8b8b</item>
+        <item name="blue">#6859ea</item>
+        <item name="error">#ff5353</item>
+        <item name="check">#4ae681</item>
+        <item name="disable">#46909090</item>
+        <item name="backgroundApp">#272727</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+</resources>
