@@ -42,4 +42,5 @@
     <string name="SaveTarget">Save Target</string>
     <string name="SavePayment">Save Payment</string>
     <string name="PaymentDetail">Payment Detail</string>
+    <string name="NextDay">Next Day</string>
 </resources>

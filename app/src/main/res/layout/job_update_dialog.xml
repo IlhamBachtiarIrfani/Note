@@ -26,7 +26,7 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/CloseBtn_JobAddDialog"
+            android:id="@+id/CloseBtn_JobUpdateDialog"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
                 app:cardBackgroundColor="?attr/invertColor">
 
                 <EditText
-                    android:id="@+id/TitleEditText_JobAddDialog"
+                    android:id="@+id/TitleEditText_JobUpdateDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -90,7 +90,7 @@
                         android:orientation="horizontal">
 
                         <CheckBox
-                            android:id="@+id/JobCheckBox_JobAddDialog"
+                            android:id="@+id/JobCheckBox_JobUpdateDialog"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp" />
@@ -105,7 +105,7 @@
                             android:textSize="13sp" />
 
                         <ImageView
-                            android:id="@+id/JobListAddBtn"
+                            android:id="@+id/JobUpdateListAddBtn"
                             android:layout_width="20dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -115,7 +115,7 @@
                     </LinearLayout>
 
                     <android.support.v7.widget.RecyclerView
-                        android:id="@+id/jobListRecycleView"
+                        android:id="@+id/jobListUpdateRecycleView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -132,7 +132,7 @@
                 app:cardBackgroundColor="?attr/invertColor">
 
                 <TextView
-                    android:id="@+id/DeadlinePicker_JobAddDialog"
+                    android:id="@+id/DeadlinePicker_JobUpdateDialog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -161,7 +161,7 @@
                     app:cardBackgroundColor="?attr/invertColor">
 
                     <TextView
-                        android:id="@+id/TimePicker_JobAddDialog"
+                        android:id="@+id/TimePicker_JobUpdateDialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -184,7 +184,7 @@
                     app:cardBackgroundColor="?attr/invertColor">
 
                     <TextView
-                        android:id="@+id/TimeUntilPicker_JobAddDialog"
+                        android:id="@+id/TimeUntilPicker_JobUpdateDialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -222,7 +222,7 @@
                         android:textColor="?attr/mediumColor" />
 
                     <EditText
-                        android:id="@+id/NoteEditText_JobAddDialog"
+                        android:id="@+id/NoteEditText_JobUpdateDialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -250,20 +250,42 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        app:cardBackgroundColor="?attr/orange">
+        android:layout_marginBottom="10dp">
 
-        <TextView
-            android:id="@+id/SaveBtn_JobAddDialog"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:padding="10dp"
-            android:text="@string/SaveNote"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="13sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/CancelBtn_JobUpdateDialog"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="?attr/orange"
+                android:padding="10dp"
+                android:text="@string/Cancel"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginRight="5dp"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SaveBtn_JobUpdateDialog"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="?attr/orange"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/SaveNote"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 

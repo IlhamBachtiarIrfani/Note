@@ -39,4 +39,5 @@
     <string name="SaveTarget">Simpan Target</string>
     <string name="SavePayment">Simpan Pembayaran</string>
     <string name="PaymentDetail">Detail Pembayaran</string>
+    <string name="NextDay">Hari Berikutnya</string>
 </resources>

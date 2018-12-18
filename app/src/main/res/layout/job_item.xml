@@ -57,6 +57,7 @@
             app:cardCornerRadius="5dp">
 
             <LinearLayout
+                android:id="@+id/GradientJobItem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/afternoon2_job_gradient"

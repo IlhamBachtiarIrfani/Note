@@ -11,12 +11,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "notes";
     public static final String ID = "_id";
     public static final String TITLE = "title";
-    public static final String JOB = "job";
     public static final String JOBLIST = "joblist";
     public static final String DATE = "date";
     public static final String TIME = "time";
     public static final String NOTE = "note";
-    private static final String db_name ="notes.db";
+    public static final String DONE = "done";
+    private static final String db_name ="appdatabase.db";
     private static final int db_version=1;
 
     // Perintah SQL untuk membuat tabel database baru
@@ -24,11 +24,11 @@ public class DBHelper extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + ID +" integer primary key autoincrement, "
             + TITLE + " varchar(50) not null, "
-            + JOB + " varchar(6) not null, "
             + JOBLIST + " varchar(1000) not null, "
             + DATE + " varchar(50) not null, "
             + TIME + " varchar(20) not null, "
-            + NOTE + " varchar(5000) not null);";
+            + NOTE + " varchar(5000) not null, "
+            + DONE + " varchar(10) not null);";
 
     public DBHelper(Context context) {
         super(context, db_name, null, db_version);

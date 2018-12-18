@@ -10,114 +10,147 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class DBDataSource {
-    //inisialiasi SQLite Database
     private SQLiteDatabase database;
-
-    //inisialisasi kelas DBHelper
     private DBHelper dbHelper;
-
-    //ambil semua nama kolom
     private String[] allColumns = { DBHelper.ID,
-            DBHelper.TITLE, DBHelper.JOB,DBHelper.JOBLIST, DBHelper.DATE, DBHelper.TITLE, DBHelper.NOTE};
+            DBHelper.TITLE,DBHelper.JOBLIST, DBHelper.DATE, DBHelper.TIME, DBHelper.NOTE, DBHelper.DONE};
 
-    //DBHelper diinstantiasi pada constructor
     public DBDataSource(Context context)
     {
         dbHelper = new DBHelper(context);
     }
 
-    //membuka/membuat sambungan baru ke database
     public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }
 
-    //menutup sambungan ke database
     public void close() {
         dbHelper.close();
     }
 
-    //method untuk create/insert barang ke database
-    public Note createNote(String title, String job, String joblist, String date, String time, String note) {
-
-        // membuat sebuah ContentValues, yang berfungsi
-        // untuk memasangkan data dengan nama-nama
-        // kolom pada database
+    public Note createNote(String title, String joblist, String date, String time, String note, String done) {
         ContentValues values = new ContentValues();
         values.put(DBHelper.TITLE, title);
-        values.put(DBHelper.JOB, job);
         values.put(DBHelper.JOBLIST, joblist);
         values.put(DBHelper.DATE, date);
         values.put(DBHelper.TIME, time);
         values.put(DBHelper.NOTE, note);
+        values.put(DBHelper.DONE, done);
 
-        // mengeksekusi perintah SQL insert data
-        // yang akan mengembalikan sebuah insert ID
         long insertId = database.insert(DBHelper.TABLE_NAME, null,
                 values);
 
-        // setelah data dimasukkan, memanggil
-        // perintah SQL Select menggunakan Cursor untuk
-        // melihat apakah data tadi benar2 sudah masuk
-        // dengan menyesuaikan ID = insertID
         Cursor cursor = database.query(DBHelper.TABLE_NAME,
                 allColumns, DBHelper.ID + " = " + insertId, null,
                 null, null, null);
 
-        // pindah ke data paling pertama
         cursor.moveToFirst();
 
-        // mengubah objek pada kursor pertama tadi
-        // ke dalam objek barang
         Note newNote= cursorToBarang(cursor);
 
-        // close cursor
         cursor.close();
 
-        // mengembalikan barang baru
         return newNote;
     }
 
     private Note cursorToBarang(Cursor cursor)
     {
-        // buat objek barang baru
         Note note = new Note();
-        // debug LOGCAT
+
         Log.v("info", "The getLONG "+cursor.getLong(0));
         Log.v("info", "The setLatLng "+cursor.getString(1)+","+cursor.getString(5));
 
-        /* Set atribut pada objek barang dengan
-         * data kursor yang diambil dari database*/
         note.setId(cursor.getLong(0));
         note.setTitle(cursor.getString(1));
-        note.setJob(cursor.getString(2));
-        note.setJobList(cursor.getString(3));
-        note.setDate(cursor.getString(4));
-        note.setTime(cursor.getString(5));
-        note.setNote(cursor.getString(6));
+        note.setJobList(cursor.getString(2));
+        note.setDate(cursor.getString(3));
+        note.setTime(cursor.getString(4));
+        note.setNote(cursor.getString(5));
+        note.setDone(cursor.getString(6));
 
-        //kembalikan sebagai objek barang
         return note;
     }
 
-    //mengambil semua data barang
     public ArrayList<Note> getAllNote() {
         ArrayList<Note> allnote = new ArrayList<Note>();
 
-        // select all SQL query
         Cursor cursor = database.query(DBHelper.TABLE_NAME,
-                allColumns, null, null, null, null, null);
+                allColumns, null, null, null, null, DBHelper.DATE);
 
-        // pindah ke data paling pertama
         cursor.moveToFirst();
-        // jika masih ada data, masukkan data barang ke
-        // daftar barang
+
         while (!cursor.isAfterLast()) {
             Note note = cursorToBarang(cursor);
             allnote.add(note);
             cursor.moveToNext();
         }
-        // Make sure to close the cursor
+
         cursor.close();
         return allnote;
+    }
+
+    public ArrayList<Note> getNoteByDate(String Day) {
+        ArrayList<Note> allnote = new ArrayList<Note>();
+
+        Cursor cursor = database.query(DBHelper.TABLE_NAME,
+                allColumns, null, null, null, null, DBHelper.TIME);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            Note note = cursorToBarang(cursor);
+            if (note.getDate().equals(Day)) {
+                allnote.add(note);
+            }
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return allnote;
+    }
+
+    public ArrayList<Note> getNoteByNextDate(String Day, String Day2) {
+        ArrayList<Note> allnote = new ArrayList<Note>();
+
+        Cursor cursor = database.query(DBHelper.TABLE_NAME,
+                allColumns, null, null, null, null, DBHelper.DATE);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            Note note = cursorToBarang(cursor);
+            if (note.getDate().equals(Day) || note.getDate().equals(Day2)) {
+
+            } else {
+                allnote.add(note);
+            }
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return allnote;
+    }
+
+    public void updateNote(Note n) {
+        String strFilter = "_id=" + n.getId();
+        ContentValues args = new ContentValues();
+
+        args.put(DBHelper.TITLE, n.getTitle());
+        args.put(DBHelper.JOBLIST, n.getJobList());
+        args.put(DBHelper.DATE, n.getDate());
+        args.put(DBHelper.TIME, n.getTime());
+        args.put(DBHelper.NOTE, n.getNote());
+        args.put(DBHelper.DONE, n.getDone());
+
+        database.update(DBHelper.TABLE_NAME, args, strFilter, null);
+    }
+
+    public Note getNote(long id) {
+        Note note = new Note();
+        Cursor cursor = database.query(DBHelper.TABLE_NAME, allColumns, "_id ="+id, null, null, null, null);
+        cursor.moveToFirst();
+        note = cursorToBarang(cursor);
+        cursor.close();
+        return note;
     }
 }

@@ -2,12 +2,12 @@ package com.irfan.ilham.percobaan;
 
 public class Note {
     private long id;
-    private String title;
-    private String job;
+    private String Title;
     private String JobList;
     private String Date;
-    private String time;
+    private String Time;
     private String Note;
+    private String Done;
 
     public long getId() {
         return id;
@@ -18,19 +18,11 @@ public class Note {
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String isJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job;
+        Title = title;
     }
 
     public String getJobList() {
@@ -50,11 +42,11 @@ public class Note {
     }
 
     public String getTime() {
-        return time;
+        return Time;
     }
 
     public void setTime(String time) {
-        this.time = time;
+        Time = time;
     }
 
     public String getNote() {
@@ -65,9 +57,17 @@ public class Note {
         Note = note;
     }
 
+    public String getDone() {
+        return Done;
+    }
+
+    public void setDone(String done) {
+        Done = done;
+    }
+
     @Override
     public String toString()
     {
-        return "Note "+ id + " " + title +" "+ job + " "+ JobList + " "+ Date + " "+ time + " "+ Note;
+        return "Note : "+ id + " " + Title +" "+ " "+ JobList + " "+ Date + " "+ Time + " "+ Note +" " + Done;
     }
 }
